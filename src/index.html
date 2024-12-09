@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Testez votre vitesse de frappe avec notre outil en ligne simple et gratuit !">
+  <meta name="keywords" content="vitesse de frappe, test de frappe, frappe rapide, vitesse de dactylographie, clavier, fast, finger">
+   <meta name="author" content="Icy">
+
+  <title>Vitesse de Frappe</title>
+  <script src="index.js" defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #89f7fe, #66a6ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      
+    }
+
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      color: #66a6ff;
+    }
+
+    #textToCopy {
+      font-size: 1rem;
+      text-align: center;
+      margin: 1.5rem auto; 
+      max-width: 80%;
+    }
+
+    textarea {
+      width: 80%;
+      max-width: 600px;
+      height: 100px;
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      resize: none;
+      background-color: rgba(255, 255, 255, 0.4);
+      color: #333;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1.5rem;
+      backdrop-filter: blur(4px);
+    }
+
+    textarea:disabled {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #aaa;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s, background-color 0.3s;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      background-color: #ccc;
+    }
+
+    #startTest {
+      background-color: #007acc;
+      color: white;
+      margin-right: 10px;
+    }
+
+    #startTest:hover {
+      background-color: #005f99;
+    }
+
+    #stopTest {
+      background-color: #ff6b6b;
+      color: white;
+    }
+
+    #stopTest:hover {
+      background-color: #d9534f;
+    }
+
+    button:active {
+      transform: scale(0.98);
+    }
+
+    #result {
+      font-size: 1.2rem;
+      margin-top: 1.5rem;
+      text-align: center;
+      max-width: 80%;
+      text-align: center;
+      margin: 1.5rem auto; 
+    }
+
+    .glass {
+      backdrop-filter: blur(20px) saturate(200%);
+      -webkit-backdrop-filter: blur(20px) saturate(200%);
+      background-color: rgba(255, 255, 255, 0.25);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      padding: 30px 20px;
+      width: 90%;
+      max-width: 600px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="glass">
+    <h1>Testez votre Vitesse de Frappe</h1>
+    <p id="textToCopy">Cliquez sur "Démarrer" pour commencer le test.</p>
+    <textarea id="typingArea" placeholder="Recopiez le texte ci dessus ici..." disabled oncopy="return false;" onpaste="return false;"></textarea>
+    <div>
+      <button id="startTest">Démarrer</button>
+      <button id="stopTest" disabled>Arrêter</button>
+    </div>
+    <p id="result"></p>
+  </div>
+</body>
+</html>
